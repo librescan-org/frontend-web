@@ -1,0 +1,29 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "@types/node": "^18.16.19",
+    "nuxt": "^3.6.2"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.8.17",
+    "@vee-validate/zod": "^4.10.6",
+    "dayjs": "^1.11.9",
+    "ethers": "^5.7.2",
+    "google-protobuf": "^3.21.2",
+    "nuxt-icons": "^3.2.1",
+    "prismjs": "^1.29.0",
+    "vee-validate": "^4.10.6",
+    "vue-composable": "^1.0.0-beta.24",
+    "zod": "^3.21.4"
+  }
+}

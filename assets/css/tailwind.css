@@ -1,0 +1,385 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'GTEestiProDisplay';
+  src: url('../fonts/gt-eesti-pro-display/GTEestiProDisplay-Regular.eot');
+  src: url('../fonts/gt-eesti-pro-display/GTEestiProDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/gt-eesti-pro-display/GTEestiProDisplay-Regular.woff2') format('woff2'),
+    url('../fonts/gt-eesti-pro-display/GTEestiProDisplay-Regular.woff') format('woff'),
+    url('../fonts/gt-eesti-pro-display/GTEestiProDisplay-Regular.ttf') format('truetype'),
+    url('../fonts/gt-eesti-pro-display/GTEestiProDisplay-Regular.svg#GTEestiProDisplay-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GTEestiProDisplay';
+  src: url('../fonts/gt-eesti-pro-display/GTEestiProDisplay-Medium.eot');
+  src: url('../fonts/gt-eesti-pro-display/GTEestiProDisplay-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/gt-eesti-pro-display/GTEestiProDisplay-Medium.woff2') format('woff2'),
+    url('../fonts/gt-eesti-pro-display/GTEestiProDisplay-Medium.woff') format('woff'),
+    url('../fonts/gt-eesti-pro-display/GTEestiProDisplay-Medium.ttf') format('truetype'),
+    url('../fonts/gt-eesti-pro-display/GTEestiProDisplay-Medium.svg#GTEestiProDisplay-Medium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GTEestiProDisplay';
+  src: url('../fonts/gt-eesti-pro-display/GTEestiProDisplay-UltraBold.eot');
+  src: url('../fonts/gt-eesti-pro-display/GTEestiProDisplay-UltraBold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/gt-eesti-pro-display/GTEestiProDisplay-UltraBold.woff2') format('woff2'),
+    url('../fonts/gt-eesti-pro-display/GTEestiProDisplay-UltraBold.woff') format('woff'),
+    url('../fonts/gt-eesti-pro-display/GTEestiProDisplay-UltraBold.ttf') format('truetype'),
+    url('../fonts/gt-eesti-pro-display/GTEestiProDisplay-UltraBold.svg#GTEestiProDisplay-UltraBold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    @apply font-gteestiprodisplay;
+  }
+
+  body {
+    @apply bg-neutral-100;
+    @apply text-qan-black-800;
+    @apply text-sm;
+  }
+
+  main {
+    @apply pb-[161px];
+  }
+
+  section {
+    @apply py-6;
+    @apply lg:py-12;
+  }
+
+  .container {
+    @apply px-4;
+    @apply sm:px-6;
+    @apply sm:max-2xl:max-w-full !important;
+  }
+
+  h1 {
+    @apply text-xl;
+    @apply mb-4;
+  }
+
+  p a {
+    @apply text-qan-blue-400;
+    @apply transition;
+  }
+
+  p a:hover {
+    @apply text-qan-blue-300;
+  }
+
+  /*
+  svg {
+    @apply align-sub !important;
+  }
+  */
+
+  .button {
+    @apply bg-qan-blue-400/10;
+    @apply py-2;
+    @apply px-3;
+    @apply rounded;
+    @apply text-sm;
+    @apply text-qan-blue-400;
+    @apply transition;
+  }
+
+  .button.button-sm {
+    @apply py-1.5;
+    @apply px-2;
+    @apply text-xs;
+  }
+
+  .button:hover, .button.button-active {
+    @apply bg-qan-blue-400;
+    @apply text-white;
+  }
+
+  .button.button-disabled {
+    @apply cursor-default;
+    @apply text-qan-gray-900;
+  }
+
+  .button.button-disabled {
+    @apply bg-qan-blue-400/10;
+    @apply cursor-default;
+    @apply text-qan-gray-900;
+  }
+
+  .col-main-left {
+    @apply max-md:col-span-12;
+    @apply md:col-span-4;
+    @apply xl:col-span-3;
+    @apply py-3;
+    @apply pr-3;
+    @apply max-md:pb-1;
+    @apply max-md:pr-0;
+    /* @apply border-b; */
+    /* @apply max-md:border-none; */
+    /* @apply border-b-neutral-200; */
+    @apply flex;
+    @apply items-start;
+  }
+
+  .col-main-right {
+    @apply max-md:col-span-12;
+    @apply md:col-span-8;
+    @apply xl:col-span-9;
+    @apply py-3;
+    @apply pl-3;
+    @apply max-md:pt-0;
+    @apply max-md:pl-0;
+    /* @apply border-b; */
+    /* @apply border-b-neutral-200; */
+  }
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(359deg)
+    }
+  }
+}
+
+@layer components {
+  /* 
+    Box component 
+  */
+  .box-component {
+    @apply items-center;
+    @apply bg-neutral-100;
+    @apply flex;
+    @apply justify-center;
+    @apply h-11;
+    @apply w-11;
+    /* @apply max-sm:hidden; */
+  }
+
+  .box-component.box-square {
+    @apply rounded;
+  }
+
+  .box-component.box-circle {
+    @apply rounded-full;
+  }
+
+  /*
+    CodeBlock component
+  */
+  .code-block-component pre {
+    @apply bg-slate-50 !important;
+    @apply p-3;
+    @apply rounded-lg;
+    @apply text-[12px] !important;
+  }
+
+  .line-numbers .line-numbers-rows {
+    @apply border-r-neutral-300 !important;
+    @apply top-[-2px] !important;
+  }
+
+  /* 
+    Label component 
+  */
+  .label-component {
+    @apply inline-block;
+    @apply py-1.5;
+    @apply px-[10px];
+    @apply rounded;
+    @apply text-xs;
+    @apply capitalize;
+  }
+
+  .label-component.label-primary {
+    @apply bg-qan-blue-400/10;
+    @apply text-qan-blue-400;
+  }
+
+  .label-component.label-secondary {
+    @apply bg-qan-gray-900/10;
+    @apply text-qan-black-800;
+  }
+
+  .label-component.label-success {
+    @apply bg-qan-green-400/10;
+    @apply text-qan-green-400;
+    @apply inline-flex;
+    @apply items-center;
+  }
+
+  .label-component.label-danger {
+    @apply bg-red-600/10;
+    @apply text-red-600;
+    @apply inline-flex;
+    @apply items-center;
+  }
+
+  .label-component.label-warning {
+    @apply bg-orange-500/10;
+    @apply text-orange-500;
+  }
+
+  /*
+    MoreLess component
+  */
+
+  .more-less-component .toggle-container {
+    @apply overflow-hidden;
+    /* @apply transition-[height]; */
+  }
+  
+  .more-less-component .toggle-container:not(.active) {
+    @apply hidden;
+  }
+
+  /*
+    Search component
+  */
+  .search-component {
+    @apply inline-flex;
+    @apply flex-wrap;
+    @apply max-sm:w-full;
+  }
+
+  .search-component label {    
+    @apply flex-1;
+    @apply w-[36rem];
+  }
+
+  .search-component input {
+    @apply rounded-tr-none;
+    @apply rounded-br-none;
+  }
+
+  .search-component button {
+    @apply rounded-tl-none;
+    @apply rounded-bl-none;
+    @apply flex-[0_0_44px];
+  }
+
+  .search-component button.loading span {
+    animation: rotation 2.5s infinite linear;
+  }
+
+  /*
+    Table component
+  */
+  .table-component {
+    @apply table-auto;
+    @apply w-full;
+  }
+
+  .table-component th {
+    @apply bg-slate-50;
+    @apply border-b-[2px];
+    @apply border-b-gray-200;
+    @apply font-medium;
+    @apply p-3;
+    @apply text-qan-gray-800;
+    @apply text-left;
+  }
+
+  .table-component td {
+    @apply border-b;
+    @apply border-b-neutral-200;
+    @apply p-3;
+  }
+
+  .table-component tr:last-of-type td {
+    @apply border-none;
+  }
+
+  .table-component.table-valign-top td {
+    @apply align-top;
+  }
+
+  /*
+    TableResponsive component
+  */
+  .table-responsive-component {
+    -webkit-overflow-scrolling: touch;
+    @apply block;
+    @apply overflow-x-auto;
+    @apply w-full;
+  }
+
+  .table-responsive-component .table-component {
+    @apply max-2xl:overflow-x-scroll;
+    @apply w-[1344px];
+  }
+
+  /*
+    Dropdown - Token holdings 
+  */
+  .dropdown--token-holdings {
+    @apply relative;
+    @apply max-w-[300px];
+  }
+
+  .dropdown--token-holdings .dropdown-button {
+    @apply bg-qan-gray-900/10;
+    @apply text-qan-black-800;    
+    @apply py-2;
+    @apply px-3;
+    @apply rounded-lg;
+    @apply text-sm;
+    @apply flex;
+    @apply items-center;
+    @apply justify-between;
+    @apply cursor-pointer;
+    @apply select-none;
+  }
+
+  .dropdown--token-holdings .dropdown-menu {
+    @apply hidden;
+    @apply absolute;
+    @apply top-[110%];
+    @apply left-0;
+    @apply right-0;
+  }
+
+  .dropdown--token-holdings .dropdown-menu.open {
+    @apply block;
+  }
+}
+
+@layer utilities {
+  .shadow-custom {
+    box-shadow: 0 0.5rem 1.1875rem 0 rgba(189, 197, 209, 0.2);
+  }
+
+  .pl-1\.15 {
+    @apply pl-[1.15rem];
+  }
+
+  .h-18 {
+    @apply h-[4.5rem];
+  }
+
+  .text-xxs {
+    font-size: 0.625rem;
+  }
+
+  /*
+    Nuxt icon
+  */
+  svg {
+    @apply mb-0 !important;
+  }
+}
